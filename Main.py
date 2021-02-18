@@ -1,5 +1,6 @@
 import opencv
 
+from config import config
 
 #Waiting state. No face detected. Reset to homing position
 def standby:
