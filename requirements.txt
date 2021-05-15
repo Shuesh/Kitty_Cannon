@@ -1,1 +1,3 @@
 opencv-python==4.5.1.48
+rpi.gpio==0.7.0
+
