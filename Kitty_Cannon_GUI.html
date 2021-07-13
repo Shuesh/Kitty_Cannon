@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<Style>
+    :root{
+        background: linear-gradient(35deg, hsl(327, 50%, 30%), hsl(327, 0%, 950%));
+        --button-size: 30px;
+    }
+    html{
+        height: 100%;
+    }
+    body{
+        height: 100%;
+    }
+    h1{
+        text-align: center;
+    }
+    #section{
+        text-align: center;
+    }
+    #up-arrow{
+        text-align: center;
+        margin: 10px;
+        height: var(--button-size);
+    }
+    #up-arrow:hover{
+        transform: scale(1.1);
+    }
+    #left-arrow{
+        text-align: center;
+        margin-right: 20px;
+        width: var(--button-size);
+    }
+    #left-arrow:hover{
+        transform: scale(1.1);
+    }
+    #right-arrow{
+        text-align: center;
+        margin-left: 20px;
+        width: var(--button-size);
+    }
+    #right-arrow:hover{
+        transform: scale(1.1);
+    }
+    #down-arrow{
+        text-align: center;
+        margin: 10px;
+        height: var(--button-size);
+    }
+    #down-arrow:hover{
+        transform: scale(1.1);
+    }
+    #fire-button{
+        text-align: center;
+    }
+    #fire-button:hover{
+        transform: scale(1.1);
+    }
+    .onoffswitch {
+    position: relative; width: 90px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    }
+    .onoffswitch-checkbox {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+    }
+    .onoffswitch-label {
+        display: block; overflow: hidden; cursor: pointer;
+        border: 2px solid #999999; border-radius: 20px;
+    }
+    .onoffswitch-inner {
+        display: block; width: 200%; margin-left: -100%;
+        transition: margin 0.3s ease-in 0s;
+    }
+    .onoffswitch-inner:before, .onoffswitch-inner:after {
+        display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+        font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+        box-sizing: border-box;
+    }
+    .onoffswitch-inner:before {
+        content: "Auto";
+        padding-left: 10px;
+        background-color: #34A7C1; color: #FFFFFF;
+    }
+    .onoffswitch-inner:after {
+        content: "Man";
+        padding-right: 10px;
+        background-color: #EEEEEE; color: #999999;
+        text-align: right;
+    }
+    .onoffswitch-switch {
+        display: block; width: 18px; margin: 6px;
+        background: #FFFFFF;
+        position: absolute; top: 0; bottom: 0;
+        right: 56px;
+        border: 2px solid #999999; border-radius: 20px;
+        transition: all 0.3s ease-in 0s; 
+    }
+    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+        margin-left: 0;
+    }
+    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+        right: 0px; 
+    }
+</Style>
+
+<html>
+    <body>
+        <h1>Kitty Cannon User Interface</h1>
+        <p Style="text-align: center">Use the controls below or your arrow keys to control the cannon</p>
+
+        <section id="section">
+            <input type="button" name="up" value=&#8593 id="up-arrow">
+            <br>
+            <input type="button" name="left" value=&#8592 id="left-arrow">
+            <input type="button" name="right" value=&#8594 id="right-arrow">
+            <br>
+            <input type="button" name="down" value=&#8595 id="down-arrow">
+            <br>
+            <input type="button" name="fire" value="Fire" id="fire-button">
+        </section>
+        <section class="onoffswitch">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0" checked>
+            <label class="onoffswitch-label" for="myonoffswitch">
+                <span class="onoffswitch-inner"></span>
+                <span class="onoffswitch-switch"></span>
+            </label>
+        </section>
+    </body>
+</html>
