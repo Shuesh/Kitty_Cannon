@@ -1,0 +1,7 @@
+Need to find/create a different mechanism for spraying. The windshield washer basically needs 2A at 12V
+
+
+IR light: 
+	DC 12V +- 5%
+	Power consumption: 8W
+	Calculated Current: 0.67A (0.63 - 0.70A)
