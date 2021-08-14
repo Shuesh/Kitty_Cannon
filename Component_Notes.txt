@@ -1,7 +1,26 @@
-Need to find/create a different mechanism for spraying. The windshield washer basically needs 2A at 12V
-
-
 IR light: 
 	DC 12V +- 5%
 	Power consumption: 8W
 	Calculated Current: 0.67A (0.63 - 0.70A)
+
+Windshield washer: Need to print a nozzle
+	DC 12V
+	Power consumption: 60W. Operable at ~25W
+	Calculated current: ~5A. Operable at 2A
+
+Raspberry Pi:
+	DC 5V
+	Power consumption: 12.5W
+	Max current: 2.5A (w/ peripherals)
+
+Servos (x2):
+	DC 4.8-6V source. 3V signal
+	Power consumption: 8W
+	Max current: 1.6A @ 6V, 1.3A @ 4.8V
+	Stall torque: 2.2kg*cm @ 6V, 2kg*cm @4.8V
+
+
+Total:
+	DC 12V
+	Power: Max 85W. Operable ~60W
+	Current: 5A Minimum

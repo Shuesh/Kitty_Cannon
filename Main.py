@@ -1,18 +1,30 @@
-import opencv
-import RPi.GPIO as gpio
+import cv2 as cv
+#import RPi.GPIO as gpio
+import numpy
+import matplotlib
+import asyncio
 
 from config import config
 
-#Waiting state. No face detected. Reset to homing position
-def standby:
 
+
+#Waiting state. No face detected. Reset to homing position
+def standby():
+    pass
+    #if manual_mode_enabled:
+        #manual()
+    #elif automatic_mode_enabled:
+        #detect_face()
 
 #Manual override. Replaces track, verify, and delay functions
-def manual:
+def manual():
+    pass
 
+async def detect_face():
+    pass
 
 #Target has been acquired. Runs a PID loop as a background process that always moves servos to aim
-def track (Kp, Ki, Kd, MV_bar=0):
+async def track (Kp, Ki, Kd, MV_bar=0):
     #Initialize stored data
     e_prev = 0
     t_prev = -100
@@ -39,14 +51,15 @@ def track (Kp, Ki, Kd, MV_bar=0):
         t_prev = t
 
 #Verify that the crosshairs are close enough to being on target that we should shoot
-def verify:
-
+async def verify(e, threshold):
+    if e < threshold:
+        await shoot()
+        await delay(config.delay_time_ms)
 
 #Shoot sprayer, delay if in auto mode, go back to verify
-def shoot:
-
-
+async def shoot():
+    pass
 #If not in manual operation, use the config value to delay between shots
-def delay:
-
+def delay(delay_time):
+    asyncio.sleep(delay_time)
 

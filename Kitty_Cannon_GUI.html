@@ -1,124 +1,244 @@
 <!DOCTYPE html>
 
-<Style>
-    :root{
-        background: linear-gradient(35deg, hsl(327, 50%, 30%), hsl(327, 0%, 950%));
-        --button-size: 30px;
-    }
-    html{
-        height: 100%;
-    }
-    body{
-        height: 100%;
-    }
-    h1{
-        text-align: center;
-    }
-    #section{
-        text-align: center;
-    }
-    #up-arrow{
-        text-align: center;
-        margin: 10px;
-        height: var(--button-size);
-    }
-    #up-arrow:hover{
-        transform: scale(1.1);
-    }
-    #left-arrow{
-        text-align: center;
-        margin-right: 20px;
-        width: var(--button-size);
-    }
-    #left-arrow:hover{
-        transform: scale(1.1);
-    }
-    #right-arrow{
-        text-align: center;
-        margin-left: 20px;
-        width: var(--button-size);
-    }
-    #right-arrow:hover{
-        transform: scale(1.1);
-    }
-    #down-arrow{
-        text-align: center;
-        margin: 10px;
-        height: var(--button-size);
-    }
-    #down-arrow:hover{
-        transform: scale(1.1);
-    }
-    #fire-button{
-        text-align: center;
-    }
-    #fire-button:hover{
-        transform: scale(1.1);
-    }
-    .onoffswitch {
-    position: relative; width: 90px;
-    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
-    }
-    .onoffswitch-checkbox {
-        position: absolute;
-        opacity: 0;
-        pointer-events: none;
-    }
-    .onoffswitch-label {
-        display: block; overflow: hidden; cursor: pointer;
-        border: 2px solid #999999; border-radius: 20px;
-    }
-    .onoffswitch-inner {
-        display: block; width: 200%; margin-left: -100%;
-        transition: margin 0.3s ease-in 0s;
-    }
-    .onoffswitch-inner:before, .onoffswitch-inner:after {
-        display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
-        font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
-        box-sizing: border-box;
-    }
-    .onoffswitch-inner:before {
-        content: "Auto";
-        padding-left: 10px;
-        background-color: #34A7C1; color: #FFFFFF;
-    }
-    .onoffswitch-inner:after {
-        content: "Man";
-        padding-right: 10px;
-        background-color: #EEEEEE; color: #999999;
-        text-align: right;
-    }
-    .onoffswitch-switch {
-        display: block; width: 18px; margin: 6px;
-        background: #FFFFFF;
-        position: absolute; top: 0; bottom: 0;
-        right: 56px;
-        border: 2px solid #999999; border-radius: 20px;
-        transition: all 0.3s ease-in 0s; 
-    }
-    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
-        margin-left: 0;
-    }
-    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-        right: 0px; 
-    }
-</Style>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Kitty Cannon User Interface</title>
+
+    <!--background: linear-gradient(35deg, hsl(327, 50%, 30%), hsl(327, 0%, 950%));-->
+    <style>
+        :root{
+            --button-size: 40px;
+            --half-button-size: var(--button-size)/2;
+            --graphic-size: 20px
+        }
+        html{
+            height: 100%;
+        }
+        body{
+            height: 100%;
+            text-align: center;
+        }
+        h1{
+            color: #363a40;
+            font-family: sans-serif;
+            font-size: 60px;
+        }
+        #videocontent{
+            background-color: lightgray;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 500px;
+            height: 500px;
+            margin: 10px;
+            border: solid black;
+        }
+        #videocontent video{
+            background-color: beige;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            height: 100%;
+            width: 100%;
+            padding-bottom: 0px;
+        }
+        #controls{
+            background-color: transparent;
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            height: 100%;
+            width: 100%;
+            padding: 0px;
+        }
+        #up-arrow-graphic{
+            z-index: 1;
+            height: var(--graphic-size);
+            width: var(--graphic-size);
+            position: absolute;
+            top: 11%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%) rotate(135deg);
+            box-shadow: -4px 4px 0 #363a40; 
+        }
+        #up-arrow-box{
+            z-index: 2;
+            background: transparent;
+            height: var(--button-size);
+            width: var(--button-size);
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%) rotate(135deg);          
+        }
+        #up-arrow-box:hover, #up-arrow-box:hover + #up-arrow-graphic{
+            transform: scale(1.1) translateY(-50%) translateX(-50%) rotate(135deg);
+        }
+        #left-arrow-graphic{
+            z-index: 1;
+            height: var(--graphic-size);
+            width: var(--graphic-size);
+            position: absolute;
+            top: 50%;
+            left: 11%;
+            transform: translateY(-50%) translateX(-50%) rotate(45deg);
+            box-shadow: -4px 4px 0 #363a40;
+        }
+        #left-arrow-box{
+            z-index: 2;
+            background: transparent;
+            height: var(--button-size);
+            width: var(--button-size);
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%) translateX(-50%) rotate(45deg);
+        }
+        #left-arrow-box:hover, #left-arrow-box:hover + #left-arrow-graphic{
+            transform: scale(1.1) translateY(-50%) translateX(-50%) rotate(45deg);
+        }
+        #right-arrow-graphic{
+            z-index: 1;
+            height: var(--graphic-size);
+            width: var(--graphic-size);
+            position: absolute;
+            top: 50%;
+            left: 89%;
+            transform: translateY(-50%) translateX(-50%) rotate(-135deg);
+            box-shadow: -4px 4px 0 #363a40;
+        }
+        #right-arrow-box{
+            z-index: 2;
+            background: transparent;
+            height: var(--button-size);
+            width: var(--button-size);
+            position: absolute;
+            top: 50%;
+            left: 90%;
+            transform: translateY(-50%) translateX(-50%) rotate(-135deg);
+        }
+        #right-arrow-box:hover, #right-arrow-box:hover + #right-arrow-graphic{
+            transform: scale(1.1) translateY(-50%) translateX(-50%) rotate(-135deg);
+        }
+        #down-arrow-graphic{
+            z-index: 1;
+            height: var(--graphic-size);
+            width: var(--graphic-size);
+            position: absolute;
+            top: 89%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%) rotate(-45deg);
+            box-shadow: -4px 4px 0 #363a40;
+        }
+        #down-arrow-box{
+            z-index: 2;
+            background: transparent;
+            height: var(--button-size);
+            width: var(--button-size);
+            position: absolute;
+            top: 90%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%) rotate(-45deg);
+        }
+        #down-arrow-box:hover, #down-arrow-box:hover + #down-arrow-graphic{
+            transform: scale(1.1) translateY(-50%) translateX(-50%) rotate(-45deg);
+        }
+        #fire-button{
+            position: absolute;
+            top: 105%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+        }
+        #fire-button:hover{
+            transform: translateY(-50%) translateX(-50%) scale(1.1);
+        }
+        .onoffswitch {
+        position: relative; width: 90px;
+        user-select: none; -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+        }
+        .onoffswitch-checkbox {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+        .onoffswitch-label {
+            display: block; overflow: hidden; cursor: pointer;
+            border: 2px solid #999999; border-radius: 20px;
+        }
+        .onoffswitch-inner {
+            display: block; width: 200%; margin-left: -100%;
+            transition: margin 0.3s ease-in 0s;
+        }
+        .onoffswitch-inner:before, .onoffswitch-inner:after {
+            display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+            font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+            box-sizing: border-box;
+        }
+        .onoffswitch-inner:before {
+            content: "Auto";
+            padding-right: 15px;
+            background-color: #34A7C1; color: #FFFFFF;
+        }
+        .onoffswitch-inner:after {
+            content: "Man";
+            padding-right: 20px;
+            background-color: #EEEEEE; color: #999999;
+            text-align: right;
+        }
+        .onoffswitch-switch {
+            display: block; width: 18px; margin: 6px;
+            background: #FFFFFF;
+            position: absolute; top: 0; bottom: 0;
+            right: 56px;
+            border: 2px solid #999999; border-radius: 20px;
+            transition: all 0.3s ease-in 0s; 
+        }
+        .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+            margin-left: 0;
+        }
+        .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+            right: 0px; 
+        }
+    </style>
+</head>
 
 <html>
     <body>
         <h1>Kitty Cannon User Interface</h1>
-        <p Style="text-align: center">Use the controls below or your arrow keys to control the cannon</p>
+        <h2>Use the controls below or your arrow keys to control the cannon</h2>
+        <div id="videocontent">
+            <video autoplay="true" id="videoElement">
+            </video>
+            <script>
+                var video = document.querySelector("#videoElement");
 
-        <section id="section">
-            <input type="button" name="up" value=&#8593 id="up-arrow">
-            <br>
-            <input type="button" name="left" value=&#8592 id="left-arrow">
-            <input type="button" name="right" value=&#8594 id="right-arrow">
-            <br>
-            <input type="button" name="down" value=&#8595 id="down-arrow">
-            <br>
-            <input type="button" name="fire" value="Fire" id="fire-button">
-        </section>
+                if (navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia({ video: true })
+                    .then(function (stream) {
+                    video.srcObject = stream;
+                    })
+                    .catch(function (err0r) {
+                    console.log("Something went wrong!");
+                    });
+                }
+            </script>
+            <div id="controls">
+                <input type="button" name="up" id="up-arrow-box">
+                <div id="up-arrow-graphic"></div>
+                <input type="button" name="left" id="left-arrow-box">
+                <div id="left-arrow-graphic"></div>
+                <input type="button" name="right" id="right-arrow-box">
+                <div id="right-arrow-graphic"></div>
+                <input type="button" name="down" id="down-arrow-box">
+                <div id="down-arrow-graphic"></div>
+                <input type="button" name="fire" value="Fire" id="fire-button">
+            </div>
+        </div>
+
         <section class="onoffswitch">
             <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" tabindex="0" checked>
             <label class="onoffswitch-label" for="myonoffswitch">
