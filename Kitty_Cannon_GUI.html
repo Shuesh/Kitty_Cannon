@@ -25,17 +25,15 @@
             font-size: 60px;
         }
         #videocontent{
-            background-color: lightgray;
             position: relative;
-            left: 50%;
+            left: 50vw;
             transform: translateX(-50%);
-            width: 500px;
-            height: 500px;
+            width: 50vmin;
+            height: 50vmin;
             margin: 10px;
             border: solid black;
         }
         #videocontent video{
-            background-color: beige;
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
@@ -68,6 +66,7 @@
         #up-arrow-box{
             z-index: 2;
             background: transparent;
+            border: none;
             height: var(--button-size);
             width: var(--button-size);
             position: absolute;
@@ -91,6 +90,7 @@
         #left-arrow-box{
             z-index: 2;
             background: transparent;
+            border: none;
             height: var(--button-size);
             width: var(--button-size);
             position: absolute;
@@ -114,6 +114,7 @@
         #right-arrow-box{
             z-index: 2;
             background: transparent;
+            border: none;
             height: var(--button-size);
             width: var(--button-size);
             position: absolute;
@@ -137,6 +138,7 @@
         #down-arrow-box{
             z-index: 2;
             background: transparent;
+            border: none;
             height: var(--button-size);
             width: var(--button-size);
             position: absolute;
@@ -149,13 +151,17 @@
         }
         #fire-button{
             position: absolute;
-            top: 105%;
+            top: 107%;
             left: 50%;
+            font-size: 25px;
+            background-color: #f07878;
             transform: translateY(-50%) translateX(-50%);
         }
         #fire-button:hover{
             transform: translateY(-50%) translateX(-50%) scale(1.1);
         }
+
+        
         .onoffswitch {
         position: relative; width: 90px;
         user-select: none; -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
@@ -247,4 +253,29 @@
             </label>
         </section>
     </body>
+    <script>
+        window.addEventListener("keydown", function (event){
+            if (event.defaultPrevented){
+                return;
+            }
+            switch (event.key){
+                case "ArrowUp":
+                    
+                    break;
+                case "ArrowLeft":
+
+                    break;
+                case "ArrowRight":
+
+                    break;
+                case "ArrowDown":
+
+                    break;
+                case "Space":
+                
+                    break;
+            }
+            event.preventDefault();
+        }, true);
+    </script>
 </html>
