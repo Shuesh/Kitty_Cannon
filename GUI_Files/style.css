@@ -1,0 +1,207 @@
+:root{
+    --button-size: 40px;
+    --half-button-size: var(--button-size)/2;
+    --graphic-size: 20px
+}
+html{
+    height: 100%;
+}
+body{
+    height: 100%;
+    text-align: center;
+}
+h1{
+    color: #363a40;
+    font-family: sans-serif;
+    font-size: 60px;
+}
+#videocontent{
+    position: relative;
+    left: 50vw;
+    transform: translateX(-50%);
+    width: 50vmin;
+    height: 50vmin;
+    margin: 10px;
+    border: solid black;
+}
+#videocontent video{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 0px;
+}
+#controls{
+    background-color: transparent;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    height: 100%;
+    width: 100%;
+    padding: 0px;
+}
+#up-arrow-graphic{
+    z-index: 1;
+    height: var(--graphic-size);
+    width: var(--graphic-size);
+    position: absolute;
+    top: 11%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%) rotate(135deg);
+    box-shadow: -4px 4px 0 #363a40; 
+}
+#up-arrow-box{
+    z-index: 2;
+    background: transparent;
+    border: none;
+    height: var(--button-size);
+    width: var(--button-size);
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%) rotate(135deg);          
+}
+#up-arrow-box:hover, #up-arrow-box:hover + #up-arrow-graphic{
+    transform: scale(1.1) translateY(-50%) translateX(-50%) rotate(135deg);
+    cursor: pointer;
+}
+#left-arrow-graphic{
+    z-index: 1;
+    height: var(--graphic-size);
+    width: var(--graphic-size);
+    position: absolute;
+    top: 50%;
+    left: 11%;
+    transform: translateY(-50%) translateX(-50%) rotate(45deg);
+    box-shadow: -4px 4px 0 #363a40;
+}
+#left-arrow-box{
+    z-index: 2;
+    background: transparent;
+    border: none;
+    height: var(--button-size);
+    width: var(--button-size);
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%) translateX(-50%) rotate(45deg);
+}
+#left-arrow-box:hover, #left-arrow-box:hover + #left-arrow-graphic{
+    transform: scale(1.1) translateY(-50%) translateX(-50%) rotate(45deg);
+    cursor: pointer;
+}
+#right-arrow-graphic{
+    z-index: 1;
+    height: var(--graphic-size);
+    width: var(--graphic-size);
+    position: absolute;
+    top: 50%;
+    left: 89%;
+    transform: translateY(-50%) translateX(-50%) rotate(-135deg);
+    box-shadow: -4px 4px 0 #363a40;
+}
+#right-arrow-box{
+    z-index: 2;
+    background: transparent;
+    border: none;
+    height: var(--button-size);
+    width: var(--button-size);
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    transform: translateY(-50%) translateX(-50%) rotate(-135deg);
+}
+#right-arrow-box:hover, #right-arrow-box:hover + #right-arrow-graphic{
+    transform: scale(1.1) translateY(-50%) translateX(-50%) rotate(-135deg);
+    cursor: pointer;
+}
+#down-arrow-graphic{
+    z-index: 1;
+    height: var(--graphic-size);
+    width: var(--graphic-size);
+    position: absolute;
+    top: 89%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%) rotate(-45deg);
+    box-shadow: -4px 4px 0 #363a40;
+}
+#down-arrow-box{
+    z-index: 2;
+    background: transparent;
+    border: none;
+    height: var(--button-size);
+    width: var(--button-size);
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%) rotate(-45deg);
+}
+#down-arrow-box:hover, #down-arrow-box:hover + #down-arrow-graphic{
+    transform: scale(1.1) translateY(-50%) translateX(-50%) rotate(-45deg);
+    cursor: pointer;
+}
+#fire-button{
+    position: absolute;
+    top: 107%;
+    left: 50%;
+    font-size: 25px;
+    background-color: #f07878;
+    transform: translateY(-50%) translateX(-50%);
+}
+#fire-button:hover{
+    transform: translateY(-50%) translateX(-50%) scale(1.1);
+    cursor: pointer;
+}
+
+
+.onoffswitch {
+position: relative; width: 90px;
+user-select: none; -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #999999; border-radius: 20px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "Auto";
+    padding-right: 15px;
+    background-color: #34A7C1; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "Man";
+    padding-right: 20px;
+    background-color: #EEEEEE; color: #999999;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 18px; margin: 6px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 56px;
+    border: 2px solid #999999; border-radius: 20px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}

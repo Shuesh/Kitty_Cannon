@@ -1,0 +1,415 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Wire Wire Line
+	8200 4600 6200 4600
+Wire Wire Line
+	6200 4600 6200 3800
+Text Label 6200 4600 0    70   ~ 0
+3V3_EN
+Wire Wire Line
+	3400 2900 3400 3100
+Wire Wire Line
+	3400 3100 3600 3100
+Wire Wire Line
+	3400 3100 3200 3100
+Wire Wire Line
+	3200 3100 3200 5400
+Wire Wire Line
+	4000 5400 4000 5200
+Wire Wire Line
+	3600 2900 3600 3100
+Wire Wire Line
+	2300 5000 4000 5000
+Wire Wire Line
+	4000 5000 4000 5200
+Wire Wire Line
+	2300 5200 4000 5200
+Wire Wire Line
+	4000 5400 4300 5400
+Wire Wire Line
+	4300 5400 4300 5800
+Wire Wire Line
+	4300 5800 4500 5800
+Wire Wire Line
+	4500 5400 4500 5800
+Wire Wire Line
+	4500 5800 5200 5800
+Wire Wire Line
+	6800 4500 6800 5300
+Wire Wire Line
+	7100 4000 7100 5300
+Wire Wire Line
+	8200 5300 7800 5300
+Wire Wire Line
+	7800 5300 7800 3300
+Wire Wire Line
+	7800 5300 7100 5300
+Wire Wire Line
+	7100 5300 6800 5300
+Wire Wire Line
+	6800 5800 6800 5300
+Wire Wire Line
+	7300 5500 7300 5800
+Wire Wire Line
+	7300 5800 6800 5800
+Wire Wire Line
+	6200 5800 6800 5800
+Wire Wire Line
+	6200 5500 6200 5800
+Wire Wire Line
+	5400 5800 6200 5800
+Wire Wire Line
+	5200 5800 5400 5800
+Connection ~ 3400 3100
+Text Label 3500 5400 0    70   ~ 0
+GND
+Connection ~ 4000 5200
+Connection ~ 4000 5400
+Connection ~ 4500 5800
+Connection ~ 6800 5300
+Connection ~ 7800 5300
+Connection ~ 7100 5300
+Connection ~ 6800 5800
+Connection ~ 6200 5800
+Connection ~ 5200 5800
+Connection ~ 5400 5800
+Wire Wire Line
+	9750 4700 9750 4400
+Text Label 9650 4700 0    70   ~ 0
+AUTO
+Wire Wire Line
+	7500 5000 7500 4700
+Wire Wire Line
+	7500 4700 7500 3300
+Wire Wire Line
+	6000 4700 7500 4700
+Wire Wire Line
+	7200 5000 7300 5000
+Wire Wire Line
+	7300 5000 7500 5000
+Wire Wire Line
+	7300 5200 7300 5000
+Connection ~ 7500 4700
+Connection ~ 7300 5000
+Text Label 7400 5000 0    70   ~ 0
+5V_IN
+Wire Wire Line
+	9750 4900 9750 5200
+Text Label 9650 4900 0    70   ~ 0
+MAN
+Text Label 9650 4800 0    70   ~ 0
+CONN
+Wire Wire Line
+	2300 4800 3100 4800
+Text Label 2700 4800 0    70   ~ 0
+ON
+Wire Wire Line
+	6600 3800 6800 3800
+Wire Wire Line
+	6800 3800 6900 3800
+Wire Wire Line
+	6800 4100 6800 3800
+Connection ~ 6800 3800
+Text Label 6600 3800 0    70   ~ 0
+3V3_BASE
+Wire Wire Line
+	4400 3100 4400 2900
+Wire Wire Line
+	4600 2900 4600 3100
+Wire Wire Line
+	4600 3100 4400 3100
+Wire Wire Line
+	4600 3100 4600 3500
+Wire Wire Line
+	4600 3500 5600 3500
+Wire Wire Line
+	7100 3100 7100 3600
+Wire Wire Line
+	6200 3100 7100 3100
+Wire Wire Line
+	6200 3500 6200 3100
+Wire Wire Line
+	5600 3500 6200 3500
+Connection ~ 4600 3100
+Connection ~ 5600 3500
+Text Label 5100 3500 0    70   ~ 0
+SPRAY_RET
+Wire Wire Line
+	4800 3100 4800 2900
+Wire Wire Line
+	4800 3100 5100 3100
+Wire Wire Line
+	5100 3100 5100 2100
+Wire Wire Line
+	4800 3100 4800 3600
+Wire Wire Line
+	5100 2100 5600 2100
+Wire Wire Line
+	4100 4800 4100 3600
+Wire Wire Line
+	4100 3600 4100 2900
+Wire Wire Line
+	4100 2900 3800 2900
+Wire Wire Line
+	4100 4800 4500 4800
+Wire Wire Line
+	4500 4800 4600 4800
+Wire Wire Line
+	3300 4800 4100 4800
+Wire Wire Line
+	4800 3600 4100 3600
+Wire Wire Line
+	4500 5100 4500 4800
+Connection ~ 4800 3100
+Text Label 3300 5175 0    70   ~ 0
+12V
+Connection ~ 4100 4800
+Connection ~ 4100 3600
+Connection ~ 4500 4800
+Wire Wire Line
+	6000 5000 6200 5000
+Wire Wire Line
+	6200 5000 6600 5000
+Wire Wire Line
+	6200 5100 6200 5000
+Connection ~ 6200 5000
+Text Label 6300 5000 0    70   ~ 0
+REG_OUT
+Text Label 6300 5000 0    70   ~ 0
+REG_OUT
+Wire Wire Line
+	8200 3400 8100 3400
+Text Label 8100 3400 0    70   ~ 0
+N$1
+Wire Wire Line
+	8200 3500 8100 3500
+Text Label 8100 3500 0    70   ~ 0
+N$2
+Wire Wire Line
+	8200 3600 8100 3600
+Text Label 8100 3600 0    70   ~ 0
+N$3
+Wire Wire Line
+	8200 3700 8100 3700
+Text Label 8100 3700 0    70   ~ 0
+N$4
+$Comp
+L Kitty_Cannon_Schematic-eagle-import:RASPBERRYPI-40-PIN-GPIO_PTH J2
+U 1 1 C3E76336
+P 8800 4400
+F 0 "J2" H 8300 5530 59  0000 L BNN
+F 1 "RASPBERRYPI-40-PIN-GPIO_PTH" H 8300 3000 59  0000 L BNN
+F 2 "Kitty_Cannon_Schematic:2X20_SHROUDED" H 8800 4400 50  0001 C CNN
+F 3 "" H 8800 4400 50  0001 C CNN
+	1    8800 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Kitty_Cannon_Schematic-eagle-import:DCJ200-10-A-XX-X_REVA J1
+U 1 1 449C7C68
+P 2000 5000
+F 0 "J1" H 1800 5300 59  0000 L BNN
+F 1 "DCJ200-10-A-XX-X_REVA" H 1800 4699 59  0000 L BNN
+F 2 "Kitty_Cannon_Schematic:GCT_DCJ200-10-A-XX-X_REVA" H 2000 5000 50  0001 C CNN
+F 3 "" H 2000 5000 50  0001 C CNN
+	1    2000 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Kitty_Cannon_Schematic-eagle-import:DCJ200-10-A-XX-X_REVA J3
+U 1 1 B665FDA9
+P 3600 2600
+F 0 "J3" H 3400 2901 59  0000 L BNN
+F 1 "DCJ200-10-A-XX-X_REVA" H 3400 2300 59  0000 L BNN
+F 2 "Kitty_Cannon_Schematic:GCT_DCJ200-10-A-XX-X_REVA" H 3600 2600 50  0001 C CNN
+F 3 "" H 3600 2600 50  0001 C CNN
+	1    3600 2600
+	0    1    1    0   
+$EndComp
+$Comp
+L Kitty_Cannon_Schematic-eagle-import:DCJ200-10-A-XX-X_REVA J4
+U 1 1 FA7CA15B
+P 4600 2600
+F 0 "J4" H 4400 2901 59  0000 L BNN
+F 1 "DCJ200-10-A-XX-X_REVA" H 4400 2300 59  0000 L BNN
+F 2 "Kitty_Cannon_Schematic:GCT_DCJ200-10-A-XX-X_REVA" H 4600 2600 50  0001 C CNN
+F 3 "" H 4600 2600 50  0001 C CNN
+	1    4600 2600
+	0    1    1    0   
+$EndComp
+$Comp
+L Kitty_Cannon_Schematic-eagle-import:USB1040-XX-X-X_REVC J5
+U 1 1 7C49DE93
+P 7700 2900
+F 0 "J5" H 7499 3201 59  0000 L BNN
+F 1 "USB1040-XX-X-X_REVC" H 7499 2500 59  0000 L BNN
+F 2 "Kitty_Cannon_Schematic:GCT_USB1040-XX-X-X_REVC" H 7700 2900 50  0001 C CNN
+F 3 "" H 7700 2900 50  0001 C CNN
+	1    7700 2900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Kitty_Cannon_Schematic-eagle-import:1N5282 D1
+U 1 1 C78C3FBD
+P 5500 2800
+F 0 "D1" H 5299 2983 69  0000 L BNN
+F 1 "1N5282" H 5272 2396 69  0000 L BNN
+F 2 "Kitty_Cannon_Schematic:DIO_1N5282" H 5500 2800 50  0001 C CNN
+F 3 "" H 5500 2800 50  0001 C CNN
+	1    5500 2800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Kitty_Cannon_Schematic-eagle-import:OS102011MA1QN1 SW2
+U 1 1 87B7DF34
+P 10050 4800
+F 0 "SW2" H 9560 5040 42  0000 L BNN
+F 1 "OS102011MA1QN1" H 10310 5040 42  0000 L BNN
+F 2 "Kitty_Cannon_Schematic:OS102011MA1QN1" H 10050 4800 50  0001 C CNN
+F 3 "" H 10050 4800 50  0001 C CNN
+	1    10050 4800
+	0    1    1    0   
+$EndComp
+$Comp
+L Kitty_Cannon_Schematic-eagle-import:TIP120 Q1
+U 1 1 22BC07EB
+P 7000 3800
+F 0 "Q1" H 7200 3900 59  0000 L BNN
+F 1 "TIP120" H 7200 3800 59  0000 L BNN
+F 2 "Kitty_Cannon_Schematic:TO220AH" H 7000 3800 50  0001 C CNN
+F 3 "" H 7000 3800 50  0001 C CNN
+	1    7000 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Kitty_Cannon_Schematic-eagle-import:R-US_0204_5 R1
+U 1 1 69FAFCF2
+P 6400 3800
+F 0 "R1" H 6250 3859 59  0000 L BNN
+F 1 "270" H 6250 3670 59  0000 L BNN
+F 2 "Kitty_Cannon_Schematic:0204_5" H 6400 3800 50  0001 C CNN
+F 3 "" H 6400 3800 50  0001 C CNN
+	1    6400 3800
+	-1   0    0    1   
+$EndComp
+$Comp
+L Kitty_Cannon_Schematic-eagle-import:R-US_0204_5 R2
+U 1 1 8EFFCFBB
+P 6800 4300
+F 0 "R2" H 6650 4359 59  0000 L BNN
+F 1 "10k" H 6650 4170 59  0000 L BNN
+F 2 "Kitty_Cannon_Schematic:0204_5" H 6800 4300 50  0001 C CNN
+F 3 "" H 6800 4300 50  0001 C CNN
+	1    6800 4300
+	0    1    1    0   
+$EndComp
+$Comp
+L Kitty_Cannon_Schematic-eagle-import:860010372006_100UF C1
+U 1 1 12B437B9
+P 4500 5300
+F 0 "C1" V 4410 5349 50  0000 C CNN
+F 1 "100uF" V 4591 5349 50  0000 C CNN
+F 2 "Kitty_Cannon_Schematic:860010372006_100UF" H 4500 5300 50  0001 C CNN
+F 3 "" H 4500 5300 50  0001 C CNN
+	1    4500 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Kitty_Cannon_Schematic-eagle-import:860010372006_100UF C2
+U 1 1 7EFD820D
+P 7300 5400
+F 0 "C2" V 7209 5449 50  0000 C CNN
+F 1 "330uF" V 7390 5449 50  0000 C CNN
+F 2 "Kitty_Cannon_Schematic:860010372006_100UF" H 7300 5400 50  0001 C CNN
+F 3 "" H 7300 5400 50  0001 C CNN
+	1    7300 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Kitty_Cannon_Schematic-eagle-import:SB3100E-G D2
+U 1 1 0CADE672
+P 6200 5100
+F 0 "D2" H 6289 4832 116 0000 L BNN
+F 1 "SB3100E-G" H 6047 4856 116 0001 L BNN
+F 2 "Kitty_Cannon_Schematic:SB2E-G" H 6200 5100 50  0001 C CNN
+F 3 "" H 6200 5100 50  0001 C CNN
+	1    6200 5100
+	0    1    1    0   
+$EndComp
+$Comp
+L Kitty_Cannon_Schematic-eagle-import:1433428C L1
+U 1 1 A48F2005
+P 6600 5000
+F 0 "L1" H 6564 5132 116 0000 L BNN
+F 1 "330uH" H 6522 4832 116 0000 L BNN
+F 2 "Kitty_Cannon_Schematic:1433428C_MUR" H 6600 5000 50  0001 C CNN
+F 3 "" H 6600 5000 50  0001 C CNN
+	1    6600 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Kitty_Cannon_Schematic-eagle-import:LM2575-5.0WT U$1
+U 1 1 89E33A62
+P 4600 4700
+F 0 "U$1" H 5850 5000 59  0000 L CNN
+F 1 "LM2575-5.0WT" H 5850 4900 59  0000 L CNN
+F 2 "Kitty_Cannon_Schematic:LM2575-5.0WT" H 4600 4700 50  0001 C CNN
+F 3 "" H 4600 4700 50  0001 C CNN
+	1    4600 4700
+	1    0    0    -1  
+$EndComp
+Text GLabel 8200 5100 0    10   BiDi ~ 0
+GND
+Text GLabel 8200 5200 0    10   BiDi ~ 0
+GND
+Text GLabel 8200 5400 0    10   BiDi ~ 0
+GND
+Text GLabel 8200 5500 0    10   BiDi ~ 0
+GND
+Text GLabel 8200 5600 0    10   BiDi ~ 0
+GND
+Text GLabel 8200 4900 0    10   BiDi ~ 0
+GND
+Text GLabel 8200 5000 0    10   BiDi ~ 0
+GND
+Wire Wire Line
+	9400 4700 9750 4700
+Wire Wire Line
+	9500 4800 9500 5300
+Wire Wire Line
+	9500 5300 9400 5300
+Wire Wire Line
+	9500 4800 9750 4800
+Wire Wire Line
+	9400 4900 9750 4900
+Wire Wire Line
+	3200 5400 4000 5400
+$Comp
+L Kitty_Cannon_Schematic-eagle-import:KRE2ANA1BBD SW1
+U 1 1 619610F7
+P 3200 5800
+F 0 "SW1" H 3012 5721 50  0000 R CNN
+F 1 "KRE2ANA1BBD" H 3012 5812 50  0000 R CNN
+F 2 "" H 3250 5850 50  0001 C CNN
+F 3 "" H 3250 5850 50  0001 C CNN
+	1    3200 5800
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3300 4800 3300 5650
+Wire Wire Line
+	3100 4800 3100 5650
+$EndSCHEMATC
