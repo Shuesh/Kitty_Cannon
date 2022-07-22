@@ -1,67 +1,39 @@
-# Named as "Brains.py" on the RPi
+#Modified by smartbuilds.io
+#Date: 27.09.20
+#Desc: This web application serves a motion JPEG stream
+# main.py
+# import the necessary packages
+from flask import Flask, render_template, Response, request, send_from_directory
+from camera import VideoCamera
+import os
 
-import cv2 as cv
-# import RPi.GPIO as gpio
-import numpy
-import matplotlib
-import asyncio
+pi_camera = VideoCamera(flip=False) # flip pi camera if upside down.
 
-from config import config
+# App Globals (do not edit)
+app = Flask(__name__)
 
+@app.route('/')
+def index():
+    return render_template('index.html') #you can customze index.html here
 
-
-#Waiting state. No face detected. Reset to homing position
-def standby():
-    pass
-    #if manual_mode_enabled:
-        #manual()
-    #elif automatic_mode_enabled:
-        #detect_face()
-
-#Manual override. Replaces track, verify, and delay functions
-def manual():
-    pass
-
-async def detect_face():
-    pass
-
-#Target has been acquired. Runs a PID loop as a background process that always moves servos to aim
-async def track (Kp, Ki, Kd, MV_bar=0):
-    #Initialize stored data
-    e_prev = 0
-    t_prev = -100
-    I = 0
-
-    #Initial control
-    MV = MV_bar
-
+def gen(camera):
+    #get camera frame
     while True:
-        #yield MV, wait for new t, PV, SP
-        t, PV, SP = yield MV
+        frame = camera.get_frame()
+        yield (b'--frame\r\n'
+               b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
 
-        #PID calculations
-        e = SP - PV
+@app.route('/video_feed')
+def video_feed():
+    return Response(gen(pi_camera),
+                    mimetype='multipart/x-mixed-replace; boundary=frame')
 
-        P = Kp*e
-        I = I + Ki*e*(t - t_prev)
-        D = Kd*(e - e_prev)/(t - t_prev)
+# Take a photo when pressing camera button
+@app.route('/picture')
+def take_picture():
+    pi_camera.take_picture()
+    return "None"
 
-        MV = MV_bar + P + I + D
+if __name__ == '__main__':
 
-        #Update stored data for next iteration
-        e_prev = e
-        t_prev = t
-
-#Verify that the crosshairs are close enough to being on target that we should shoot
-async def verify(e, threshold):
-    if e < threshold:
-        await shoot()
-        await delay(config.delay_time_ms)
-
-#Shoot sprayer, delay if in auto mode, go back to verify
-async def shoot():
-    pass
-#If not in manual operation, use the config value to delay between shots
-def delay(delay_time):
-    asyncio.sleep(delay_time)
-
+    app.run(host='0.0.0.0', debug=False)
