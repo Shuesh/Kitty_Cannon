@@ -1,5 +1,3 @@
-# Named as "Brains.py" on the RPi
-
 import cv2 as cv
 # import RPi.GPIO as gpio
 import numpy

@@ -31,16 +31,24 @@ def video_feed():
 
 @app.route('/<cmd>')
 def command(cmd=None):
+    response = cmd
     if cmd == 'up':
+        response = 'up arrow'
         print('up arrow')
     elif cmd == 'down':
+        response = 'down arrow'
         print('down arrow')
     elif cmd == 'right':
+        response = 'right arrow'
         print('right arrow')
     elif cmd == 'left':
+        response = 'left arrow'
         print('left arrow')
-    elif cmd == 'Fire':
-        print('Fire')
+    elif cmd == 'fire':
+        response = 'fire'
+        print('fire')
+
+    return response, 200, {'Content-Type': 'text/plain'}
 
 
 
