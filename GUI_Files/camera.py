@@ -2,11 +2,11 @@
 #Date: 27.09.20
 #Desc: This scrtipt script..
 
-import cv2 as cv
-from imutils.video.pivideostream import PiVideoStream
-import imutils
-import time
 from datetime import datetime
+import time
+import imutils
+from imutils.video.pivideostream import PiVideoStream
+import cv2 as cv
 import numpy as np
 
 class VideoCamera(object):
