@@ -28,11 +28,21 @@ def video_feed():
     return Response(gen(pi_camera),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
-# Take a photo when pressing camera button
-@app.route('/picture')
-def take_picture():
-    pi_camera.take_picture()
-    return "None"
+
+@app.route('/<cmd>')
+def command(cmd=None):
+    if cmd == 'up':
+        print('up arrow')
+    elif cmd == 'down':
+        print('down arrow')
+    elif cmd == 'right':
+        print('right arrow')
+    elif cmd == 'left':
+        print('left arrow')
+    elif cmd == 'Fire':
+        print('Fire')
+
+
 
 if __name__ == '__main__':
 

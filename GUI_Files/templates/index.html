@@ -4,8 +4,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel='stylesheet' href="{{url_for('static', filename='style.css')}}">
-    <!-- Can't find this js for some reason. May need to place it somewhere else -->
-    <script src='script.js' defer></script>
+    <script src="{{url_for('static', filename = 'script.js')}}" defer></script>
     <title>Kitty Cannon User Interface</title>
 </head>
 
@@ -17,15 +16,15 @@
             <h2>Use the controls below or your arrow keys to control the cannon</h2>
             <div id="stream">
                 <img  class="camera-bg" id="bg" class="center" src="{{ url_for('video_feed') }}">
-                <div id="controls">
-                    <input type="image" src="{{url_for('static', filename='chevron_up.png')}}" id="up" class="control arrows">
+                <form id="controls" method="get">
+                    <input type="image" name="controlkey" value="up" src="{{url_for('static', filename='chevron_up.png')}}" id="up" class="control arrows">
                     <div id="left-right">
-                        <input type="image" src="{{url_for('static', filename='chevron_left.png')}}" id="left" class="control arrows">
-                        <input type="image" src="{{url_for('static', filename='chevron_right.png')}}" id="right" class="control arrows">
+                        <input type="image" name="controlkey" value="left" src="{{url_for('static', filename='chevron_left.png')}}" id="left" class="control arrows">
+                        <input type="image" name="controlkey" value="right" src="{{url_for('static', filename='chevron_right.png')}}" id="right" class="control arrows">
                     </div>
-                    <input type="image" src="{{url_for('static', filename='chevron_down.png')}}" id="down" class="control arrows">
-                    <input type="button" value="Fire" id="fire" class="control">
-                </div>
+                    <input type="image" name="controlkey" value="down" src="{{url_for('static', filename='chevron_down.png')}}" id="down" class="control arrows">
+                    <input type="button" name="controlkey" value="Fire" id="fire" class="control">
+                </form>
             </div>
         
             <section class="onoffswitch">
