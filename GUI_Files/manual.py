@@ -1,30 +1,41 @@
+import gpio_interface
+import time
 
-class ControlState(object):
-    #Some default starting states in case nothing has been run yet.
-    #We will want manual to take over in the same place as auto, which will require some extra code.
-    azimuth = 0
-    elevation = 0
-
-    def __init__(azimuth = 0, elevation = 0):
+class control_state(object):
+    
+    def __init__(self, azimuth = 45, elevation = 45):
         self.azimuth = azimuth
         self.elevation = elevation
 
-
-    def up(amount):
-        elevation += amount
+        self.pi = gpio_interface.pi_board()
 
 
-    def down(amount):
-        elevation -= amount
+    def move_up(self, amount):
+        self.elevation = self.pi.get_elevation()
+        self.pi.set_elevation(self.elevation + amount)
+
+    def move_down(self, amount):
+        self.elevation = self.pi.get_elevation()
+        self.pi.set_elevation(self.elevation - amount)
 
 
-    def left(amount):
-        azimuth -= amount
+    def move_left(self, amount):
+        self.azimuth = self.pi.get_azimuth()
+        self.pi.set_azimuth(self.azimuth - amount)
+
+    def move_right(self, amount):
+        self.azimuth = self.pi.get_azimuth()
+        self.pi.set_azimuth(self.azimuth + amount)
+        print(self.pi.get_azimuth())
 
 
-    def right(amount):
-        azimuth += amount
-
-
-    def fire():
+    def fire(self):
         pass
+
+
+
+if __name__ == '__main__':
+    control = ControlState()
+    for _ in range(0,45):
+        control.move_left(2)
+        time.sleep(0.05)
