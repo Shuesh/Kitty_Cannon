@@ -15,16 +15,17 @@ class pi_board(object):
 
         # set pins to output mode
         self.pi.set_mode(self.AZIMUTH_PIN, pigpio.OUTPUT)
+        self.pi.set_mode(self.ELEVATION_PIN, pigpio.OUTPUT)
         # rescale the range to 1836 so that pwm is from 40 - 220
         self.pi.set_PWM_range(self.AZIMUTH_PIN, 1836)
+        self.pi.set_PWM_range(self.ELEVATION_PIN, 1836)
         # define the frequency of the periods
         self.pi.set_PWM_frequency(self.AZIMUTH_PIN, 50)
+        self.pi.set_PWM_frequency(self.ELEVATION_PIN, 50)
 
         # Set position with the initial settings
         self.set_azimuth(azimuth)
-        time.sleep(1)
         self.set_elevation(elevation)
-        time.sleep(1)
 
 
 

@@ -9,6 +9,7 @@ import os
 import manual
 import auto
 
+
 pi_camera = VideoCamera(flip=False) # flip pi camera if upside down.
 manual_control = manual.control_state()
 
@@ -37,15 +38,19 @@ def command(cmd=None):
     response = cmd
     if cmd == 'up':
         response = 'up arrow'
+        manual_control.move_up(5)
         print('up arrow')
     elif cmd == 'down':
         response = 'down arrow'
+        manual_control.move_down(5)
         print('down arrow')
     elif cmd == 'right':
         response = 'right arrow'
+        manual_control.move_right(5)
         print('right arrow')
     elif cmd == 'left':
         response = 'left arrow'
+        manual_control.move_left(5)
         print('left arrow')
     elif cmd == 'fire':
         response = 'fire'

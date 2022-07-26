@@ -12,21 +12,24 @@ class control_state(object):
 
     def move_up(self, amount):
         self.elevation = self.pi.get_elevation()
-        self.pi.set_elevation(self.elevation + amount)
+        if self.elevation < 220:
+            self.pi.set_elevation(self.elevation + amount)
 
     def move_down(self, amount):
         self.elevation = self.pi.get_elevation()
-        self.pi.set_elevation(self.elevation - amount)
+        if self.azimuth > 40:
+            self.pi.set_elevation(self.elevation - amount)
 
 
     def move_left(self, amount):
         self.azimuth = self.pi.get_azimuth()
-        self.pi.set_azimuth(self.azimuth - amount)
+        if self.azimuth > 40:
+            self.pi.set_azimuth(self.azimuth - amount)
 
     def move_right(self, amount):
         self.azimuth = self.pi.get_azimuth()
-        self.pi.set_azimuth(self.azimuth + amount)
-        print(self.pi.get_azimuth())
+        if self.azimuth < 220:
+            self.pi.set_azimuth(self.azimuth + amount)
 
 
     def fire(self):
@@ -35,7 +38,7 @@ class control_state(object):
 
 
 if __name__ == '__main__':
-    control = ControlState()
+    control = control_state()
     for _ in range(0,45):
         control.move_left(2)
         time.sleep(0.05)
